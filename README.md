@@ -7,7 +7,7 @@
 #### Run:
 - `npm install`
 - `npm run build`
-- `npm run de`
+- `npm run dev`
 The project will be executed in: http://localhost:4000/
 
 #### Run test 
