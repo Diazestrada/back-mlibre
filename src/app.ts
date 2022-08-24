@@ -1,4 +1,5 @@
 import express, { Express } from "express";
+import cors from 'cors';
 import dotenv from "dotenv";
 
 import products from "./routes/products";
@@ -12,6 +13,9 @@ dotenv.config();
 // middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors({
+  origin:'http://localhost:3000'
+}))
 
 // router
 app.use(products, product);

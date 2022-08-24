@@ -15,18 +15,16 @@ export const productoController = async (req: Request, res: Response) => {
     const response = urls.map(async (url) => (await axios(url)).data);
 
     const [products, { plain_text }] = await Promise.all(response);
-
     const product = {
       author,
       item: {
         id: products["id"],
         title: products["title"],
         price: {
-          currency: products["currency"],
-          amount: products["amount"],
-          decimals: products["decimals"],
+          currency: products["currency_id"],
+          amount: products["price"],
         },
-        picture: products["picture"],
+        picture: products["thumbnail"],
         condition: products["condition"],
         free_shipping: products["free_shipping"],
         sold_quantity: products["sold_quantity"],
